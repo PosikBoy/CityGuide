@@ -250,7 +250,7 @@ header::before {
 }
 
 .first-screen {
-  background: url("/wwwroot/img/first-screen-background.png") 0 0 no-repeat;
+  background: url("https://posikboy.github.io/CityGuide/wwwroot/img/first-screen-background.png") 0 0 no-repeat;
   min-height: 720px;
   height: 100%;
   width: 100%;
@@ -339,7 +339,7 @@ header::before {
   margin: 0 auto;
 }
 .second-screen {
-  background: url(/wwwroot/img/second-screen-background.jpg) 0 0 / cover
+  background: url(https://posikboy.github.io/CityGuide/wwwroot/img/second-screen-background.jpg) 0 0 / cover
     no-repeat;
   height: 100%;
   width: 100%;
@@ -376,24 +376,24 @@ header::before {
   text-transform: uppercase;
 }
 .second-screen__category-card {
-  background: url(/wwwroot/img/warning.png) 0 0 / cover no-repeat;
+  background: url(https://posikboy.github.io/CityGuide/wwwroot/img/warning.png) 0 0 / cover no-repeat;
   background-position: center;
 }
 .restaurant {
-  background: url(/wwwroot/img/category-restaurant.jpg);
+  background: url(https://posikboy.github.io/CityGuide/wwwroot/img/category-restaurant.jpg);
   background-position: 250px 300px;
 }
 .park {
-  background: url(/wwwroot/img/category-back.png) no-repeat;
+  background: url(https://posikboy.github.io/CityGuide/wwwroot/img/category-back.png) no-repeat;
 }
 
 .second-screen__category-card.sight {
-  background: url(/wwwroot/img/category-sight.jpg) no-repeat;
+  background: url(https://posikboy.github.io/CityGuide/wwwroot/img/category-sight.jpg) no-repeat;
   background-position: center;
 }
 
 .second-screen__category-card.museums {
-  background: url(/wwwroot/img/category-museum.webp);
+  background: url(https://posikboy.github.io/CityGuide/wwwroot/img/category-museum.webp);
 }
 
 .footer {
