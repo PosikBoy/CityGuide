@@ -1,0 +1,463 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/*Конец обнуления*/
+
+body {
+  font-family: "Montserrat";
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  margin: 0 auto;
+  max-width: 1008px;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+.header__logo {
+  z-index: 3;
+  max-width: 80px;
+}
+header::before {
+  background-color: rgba(48, 41, 48, 0.85);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  z-index: 2;
+}
+.header__body {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 66px;
+  align-items: center;
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.menu__button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  margin-right: 30px;
+}
+
+.menu__button:hover:before {
+  transform: scaleX(1);
+  transition: all 0.4s ease-in-out;
+}
+.menu__button::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+}
+
+.header__logo img {
+  max-width: 100%;
+}
+.header__burger {
+  display: none;
+}
+@media (max-width: 767px) {
+  .header__logo {
+    flex: 0 0 50px;
+  }
+  .header__body {
+    height: 50px;
+  }
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 3;
+  }
+  .header__burger::after,
+  .header__burger::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease-out;
+  }
+  .header__burger::before {
+    top: 0;
+  }
+  .header__burger::after {
+    bottom: 0;
+  }
+  .header__burger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    top: 8px;
+    transition: all 0.3s ease-out;
+  }
+
+  .header__burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .header__burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  .header__burger.active span {
+    transform: scale(0);
+  }
+  .header__menu {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(217, 217, 217, 0.9);
+    padding: 75px 0 0 20px;
+    top: -100%;
+    transition: all 0.4s ease-in-out;
+  }
+  .nav__list {
+    display: block;
+  }
+  .nav__list .menu__button {
+    color: #000000;
+    margin-top: 30px;
+    line-height: 40px;
+    font-size: 25px;
+  }
+  .menu__button::before {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+  }
+  .menu__button:hover:before {
+    transform: scaleX(1);
+    transition: all 0.4s ease-in-out;
+  }
+  .header__menu.active {
+    top: 0;
+  }
+}
+
+.first-screen {
+  background: url("/wwwroot/img/index-first-screen-background.png") 0 0
+    no-repeat;
+  min-height: 720px;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+}
+
+.first-screen__body {
+  padding: 230px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 490px;
+}
+
+.first-screen__title {
+  color: white;
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 59px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.first-screen__subtitle {
+  color: white;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+}
+
+.first-screen__button a {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  display: inline-block;
+  background: rgba(217, 217, 217, 0.9);
+  padding: 15px 50px;
+  text-decoration: none;
+  color: black;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.first-screen__button a:hover {
+  background: rgba(178, 178, 178, 0.9);
+  box-shadow: 2px 2px 15px 6px rgba(70, 70, 70, 0.4);
+  display: inline-block;
+  transition: all 0.3s ease-out;
+}
+
+.second-screen__title {
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  display: block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 49px;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 21px;
+  border-bottom: 3px solid #ffffff;
+}
+.second-screen__subtitle {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  padding-top: 5px;
+  color: #ffffff;
+}
+.second-screen__body {
+  align-items: center;
+  margin: 0 auto;
+}
+.second-screen {
+  background: url(/wwwroot/img/index-second-screen-background.jpg) 0 0 / cover
+    no-repeat;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 50px;
+}
+.second-screen__row {
+  display: flex;
+  flex-direction: row;
+  flex: 0 1 25px;
+  justify-content: space-between;
+  margin: 39px 0 0 0;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.second-screen__category-card {
+  height: 282px;
+  width: 220px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.category-name {
+  text-align: center;
+  padding-top: 10px;
+  display: block;
+  height: 44px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+
+  color: white;
+  text-transform: uppercase;
+}
+.restaurant {
+  background: url(../img/index-category-restaurant.jpg);
+  background-position: 250px 300px;
+}
+.park {
+  background: url(../img/index-category-park.png) no-repeat;
+}
+
+.second-screen__category-card.sight {
+  background: url(../img/index-category-sight.jpg) no-repeat;
+  background-position: center;
+}
+
+.second-screen__category-card.museums {
+  background: url(../img/index-category-museum.webp);
+}
+
+.footer {
+  background-color: rgba(217, 217, 217, 1);
+  width: 100%;
+  height: auto;
+  padding: 20px 0 0 0;
+}
+.footer__row {
+  justify-content: space-between;
+  width: 100%;
+  height: auto;
+  background-color: rgba(217, 217, 217, 1);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer__name {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 25px;
+  color: #000000;
+  position: relative;
+  text-align: left;
+}
+
+.footer__list {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.footer p {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.footer__link {
+  color: #000000;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.footer__main-column {
+  margin-right: 25px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+  .first-screen__title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 439px) {
+  .second-screen__row {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+}
