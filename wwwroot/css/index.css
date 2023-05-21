@@ -250,8 +250,7 @@ header::before {
 }
 
 .first-screen {
-  background: url("/wwwroot/img/index-first-screen-background.png") 0 0
-    no-repeat;
+  background: url("../img/index-first-screen-background.png") 0 0 no-repeat;
   min-height: 720px;
   height: 100%;
   width: 100%;
@@ -340,7 +339,7 @@ header::before {
   margin: 0 auto;
 }
 .second-screen {
-  background: url(/wwwroot/img/index-second-screen-background.jpg) 0 0 / cover
+  background: url(../img/index-second-screen-background.jpg) 0 0 / cover
     no-repeat;
   height: 100%;
   width: 100%;
