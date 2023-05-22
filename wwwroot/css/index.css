@@ -458,7 +458,7 @@ header::before {
   }
 }
 
-@media (max-width: 439px) {
+@media (max-width: 460px) {
   .second-screen__row {
     flex-direction: column;
     align-items: center;
