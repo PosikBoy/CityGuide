@@ -108,6 +108,8 @@ body {
   height: 100%;
 }
 .container {
+  padding-left: 10px;
+  padding-right: 10px;
   margin: 0 auto;
   max-width: 1008px;
 }
@@ -180,6 +182,9 @@ header::before {
   display: none;
 }
 @media (max-width: 767px) {
+  body.lock {
+    overflow: hidden;
+  }
   .header__logo {
     flex: 0 0 50px;
   }
@@ -337,7 +342,7 @@ header::before {
 }
 
 .content {
-  padding: 100px 0 30px 0;
+  padding: 600px 0 30px 0;
 }
 
 h2 {

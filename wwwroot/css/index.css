@@ -89,6 +89,8 @@ body {
   height: 100%;
 }
 .container {
+  padding-left: 10px;
+  padding-right: 10px;
   margin: 0 auto;
   max-width: 1008px;
 }
@@ -161,6 +163,9 @@ header::before {
   display: none;
 }
 @media (max-width: 767px) {
+  body.lock {
+    overflow: hidden;
+  }
   .header__logo {
     flex: 0 0 50px;
   }
@@ -360,6 +365,7 @@ header::before {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  margin-bottom: 10px;
 }
 .category-name {
   text-align: center;
