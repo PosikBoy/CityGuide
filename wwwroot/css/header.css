@@ -1,0 +1,244 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+.header__logo {
+  z-index: 3;
+  max-width: 80px;
+}
+header::before {
+  background-color: rgba(48, 41, 48, 0.85);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  z-index: 2;
+}
+.header__body {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 66px;
+  align-items: center;
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.menu__button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+  color: white;
+  position: relative;
+  margin-right: 30px;
+}
+
+.nav__list li {
+  list-style-type: none;
+  position: relative;
+}
+
+.sub-menu__list {
+  display: none;
+  min-width: auto;
+  position: absolute;
+  left: 0;
+  top: 22.5px;
+}
+
+.sub-menu__list > li {
+  background-color: rgba(48, 41, 48, 0.85);
+}
+
+.sub-menu__link {
+  color: #ffffff;
+  display: inline-block;
+  padding: 8px 8px 8px 8px;
+}
+
+.arrow {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 12px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #fff;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+}
+
+.arrow.active {
+  transform: rotate(-180deg);
+}
+
+body.mouse .nav__list > li:hover .sub-menu__list {
+  display: block;
+  padding: 22.5px 0 0 0;
+}
+body.touch .sub-menu__list.open {
+  display: block;
+}
+body.touch .arrow {
+  display: block;
+}
+
+.sub-menu__arrow.arrow {
+  right: 10px;
+  border-left: 10px solid #000;
+  border-right: none;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+.menu__button:hover:before {
+  transform: scaleX(1);
+  transition: all 0.4s ease-in-out;
+}
+.menu__button::before {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+}
+
+.header__logo img {
+  max-width: 100%;
+}
+.header__burger {
+  display: none;
+}
+@media (max-width: 767px) {
+  .arrow {
+    display: none;
+    position: absolute;
+    left: 215px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid #000000;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+  }
+
+  .sub-menu__link {
+    color: #000;
+  }
+  .menu__list {
+    display: block;
+  }
+  .menu__list > li {
+    margin: 0px 0px 10px 0px;
+  }
+  .sub-menu__list {
+    position: relative;
+    left: 0;
+    top: 0;
+    background-color: rgba(217, 217, 217, 0);
+    color: #000;
+  }
+  body.lock {
+    overflow: hidden;
+  }
+  .header__logo {
+    flex: 0 0 50px;
+  }
+  .header__body {
+    height: 50px;
+  }
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 3;
+  }
+  .header__burger::after,
+  .header__burger::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease-out;
+  }
+  .header__burger::before {
+    top: 0;
+  }
+  .header__burger::after {
+    bottom: 0;
+  }
+  .header__burger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+    top: 8px;
+    transition: all 0.3s ease-out;
+  }
+
+  .header__burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .header__burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  .header__burger.active span {
+    transform: scale(0);
+  }
+  .header__menu {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(217, 217, 217, 0.9);
+    padding: 75px 0 0 20px;
+    top: -100%;
+    transition: all 0.4s ease-in-out;
+  }
+  .nav__list {
+    display: block;
+  }
+  .nav__list .menu__button {
+    color: #000000;
+    margin-top: 30px;
+    line-height: 40px;
+    font-size: 25px;
+  }
+  .menu__button::before {
+    content: "";
+    height: 2px;
+    width: 100%;
+    background-color: #000000;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+  }
+  .menu__button:hover:before {
+    transform: scaleX(1);
+    transition: all 0.4s ease-in-out;
+  }
+  .header__menu.active {
+    top: 0;
+  }
+}

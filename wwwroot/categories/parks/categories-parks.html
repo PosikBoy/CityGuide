@@ -1,14 +1,30 @@
 <!--Тут надо заменить /CityGuide/wwwroot на /CityGuide/CityGuide/wwwroot-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>CityGuide - категории</title>
+    <title>CityGuide - парки</title>
+    <link
+      rel="stylesheet"
+      href="/CityGuide/wwwroot/css/start-characteristics.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="/CityGuide/wwwroot/css/header.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="/CityGuide/wwwroot/css/footer.css"
+      type="text/css"
+    />
     <link
       rel="stylesheet"
       href="/CityGuide/wwwroot/css/categories/parks/categories-parks.css"
       type="text/css"
     />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,6 +35,9 @@
   </head>
   <body>
     <div class="wrapper">
+      <a href="#" class="scroll_to_top">
+        <img src="/CityGuide/wwwroot/img/arrow.png" class="arrow__stt" alt="" />
+      </a>
       <header class="header">
         <div class="container">
           <div class="header__body">
@@ -63,6 +82,41 @@
                     title="Категории мест"
                     >Категории мест</a
                   >
+                  <span class="menu__arrow arrow"></span>
+                  <ul class="sub-menu__list">
+                    <li>
+                      <a
+                        href="/CityGuide/wwwroot/categories/parks/categories-parks.html"
+                        class="sub-menu__link"
+                        title="Парки"
+                        >Парки</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/CityGuide/wwwroot/error-in-develop/in-develop.html"
+                        class="sub-menu__link"
+                        title="Страница в разработке"
+                        >Музеи</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/CityGuide/wwwroot/error-in-develop/in-develop.html"
+                        class="sub-menu__link"
+                        title="Страница в разработке"
+                        >Театры</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="/CityGuide/wwwroot/error-in-develop/in-develop.html"
+                        class="sub-menu__link"
+                        title="Страница в разработке"
+                        >Рестораны</a
+                      >
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </nav>
