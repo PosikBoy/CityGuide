@@ -135,6 +135,9 @@ body.touch .arrow {
     border-right: 10px solid transparent;
     border-left: 10px solid transparent;
   }
+  .sub-menu__list > li {
+    background-color: rgba(217, 217, 217, 0);
+  }
 
   .sub-menu__link {
     color: #000;
@@ -149,7 +152,6 @@ body.touch .arrow {
     position: relative;
     left: 0;
     top: 0;
-    background-color: rgba(217, 217, 217, 0);
     color: #000;
   }
   body.lock {
