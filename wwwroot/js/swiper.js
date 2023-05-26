@@ -4,4 +4,9 @@ new Swiper(".image-slider", {
     clickable: true,
     dynamicBullets: true,
   },
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
 });
